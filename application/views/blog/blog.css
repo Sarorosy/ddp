@@ -1,0 +1,5 @@
+.banner {
+    background-image: url('../images/temple.jpg'); /* Change to your desired image */
+    background-size: cover;
+    background-position: center;
+}

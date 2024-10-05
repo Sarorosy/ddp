@@ -1,0 +1,11 @@
+.banner {
+    background-image: url('../images/mtfuji2.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+.banner h1{
+    letter-spacing: 1.5px;
+    transform: scaleY(1.1);
+}
+

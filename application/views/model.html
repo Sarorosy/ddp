@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Viewer with three.js</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script>
+        let scene, camera, renderer, model;
+        let angleY = 0; // Rotation angle on the X-axis
+
+        function init() {
+            // Create scene
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            // Add a light source
+            const light = new THREE.DirectionalLight(0xffffff, 1);
+            light.position.set(0, 1, 1).normalize();
+            scene.add(light);
+
+            // Load the .glb model
+            const loader = new THREE.GLTFLoader();
+            loader.load('images/3dlogo.glb', function(gltf) {
+                model = gltf.scene;
+                model.rotation.x = 0 ; // Show the front of the model
+                scene.add(model);
+            });
+
+            // Set camera position
+            camera.position.z = 5;
+
+            // Handle window resizing
+            window.addEventListener('resize', onWindowResize, false);
+
+            // Animation loop
+            animate();
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            if (model) {
+                model.rotation.y = angleY - 9.6; // Rotate around the X-axis
+            }
+            renderer.render(scene, camera);
+        }
+
+        // Handle mouse drag for X-axis rotation
+        window.addEventListener('mousemove', (event) => {
+            if (event.buttons === 1) { // If the left mouse button is pressed
+                angleY += (event.movementX * 0.01); // Update angleX based on mouse movement
+            }
+        });
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        init();
+    </script>
+</body>
+</html>

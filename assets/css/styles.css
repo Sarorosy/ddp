@@ -1,0 +1,330 @@
+@font-face {
+    font-family: 'Kamikaze';
+    src: url('fonts/kamikaze.regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Arigato';
+    src: url('fonts/Arigato.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nuku';
+    src: url('fonts/nuku1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poiret One',sans-serif !important;
+    font-weight: bold !important;
+}
+
+/* Full-page container */
+body, html {
+    font-family: 'Poiret One', sans-serif;
+    height: auto;
+    overflow-x: hidden;
+}
+h1::selection,h2::selection,h3::selection,h4::selection,h5::selection,h6::selection,p::selection,label::selection,::selection,span::selection{
+    background-color: red;
+    color: white;
+}
+/* Font styles */
+.nuku {
+    font-family: 'Nuku', sans-serif;
+}
+.kamikaze {
+    font-family: 'Kamikaze', sans-serif;
+}
+.arigato{
+    font-family: 'Arigato',sans-serif;
+}
+
+/* Preloader container */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    z-index: 9999;
+}
+
+/* Image styling */
+#preloader img {
+    width: 190px;
+    opacity: 0;
+    transform: scale(1);
+    animation: zoomFade 2s forwards;
+}
+
+/* Animation for zooming and fading */
+@keyframes zoomFade {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+.japanbg-col{
+    background: linear-gradient(180deg, #2d0606 0%, black 100%);
+}
+/* Content styling after preloader */
+#content {
+    display: none;
+    background: linear-gradient(180deg, #2d0606 0%, black 100%); /* Dark red to black gradient */
+    color: #fff;
+    height: 100%;
+    display: flex;
+    justify-content: space-around; /* Adjust to space out content */
+    align-items: center; /* Center vertically */
+    padding: 20px;
+}
+
+
+/* Hero Section */
+/* .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    padding: 0 20px;
+    position: relative;
+    
+
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-family: 'Kamikaze', sans-serif;
+    font-size: 4em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 200;
+}
+@media (min-width: 480px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+}
+.hero p {
+    margin-top: 20px;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+.hero p span{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.hero-image {
+    width: 450px;
+    margin-left: 50px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.hero-image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.centered-text {
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3em;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: snow;
+    text-align: center;
+    font-family: 'Nuku', sans-serif;
+}
+
+.square-div{
+    width: 400px;
+    height: 400px;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Shippori Antique B1', sans-serif;
+    background-color: #2d0606; /* Dark red background */
+    color: #fff;
+}
+
+/* Navbar */
+/* nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 80px;
+    background-color: rgba(0, 0, 0, 0.8); 
+   
+}
+nav div{
+    display: flex;
+    align-items: center;
+}
+nav div h2{
+    font-size: 1em;
+}
+nav img {
+    height: 70px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+} */
+ .redback{
+    background-image: url(<?php echo base_url('assets/images/bg-red.mp4') ?>);
+ }
+ .video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full-screen height */
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    /* Your content styling here */
+}
+
+/* New Content Section Styling */
+.content-section {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-around; /* Space cards evenly */
+    flex-wrap: wrap; /* Wrap cards to the next line if necessary */
+    padding: 50px 20px; /* Padding for spacing */
+    background-color: rgba(45, 6, 6, 0.9); /* Dark background for contrast */
+}
+
+/* Card Styling */
+.card {
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    padding: 30px; /* Internal padding */
+    margin: 20px; /* Margin between cards */
+    flex: 1; /* Allow cards to grow and shrink */
+    min-width: 300px; /* Minimum width for responsiveness */
+    max-width: 400px; /* Maximum width for larger screens */
+}
+
+/* Card Headings */
+.card h2 {
+    font-size: 1.8em; /* Font size for headings */
+    margin-bottom: 15px; /* Spacing below headings */
+    color: #fff; /* White text color for headings */
+}
+
+/* Card Paragraphs */
+.card p {
+    font-size: 1em; /* Font size for paragraphs */
+    line-height: 1.5; /* Line height for readability */
+    color: #ddd; /* Slightly lighter color for paragraphs */
+}
+/* Contact Section Styling */
+
+/* .contact-img{
+    height:250px;
+    background: url('images/dragon-bg.jpg');
+    background-size: cover;
+    background-position: center;
+} */
+.contact-section h2 {
+    font-size: 2em; /* Font size for heading */
+    margin-bottom: 20px; /* Spacing below heading */
+}
+
+.contact-section p {
+    font-size: 1.2em; /* Font size for paragraph */
+    line-height: 1.6; /* Line height for readability */
+    margin-bottom: 20px; /* Spacing below paragraph */
+}
+
+/* Contact Button */
+.contact-button {
+    background-color: #2d0606;  /* Bright button color */
+    color: white; /* White text color */
+    padding: 15px 30px; /* Padding for button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for button */
+    font-size: 1em; /* Font size for button text */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+
+#temple-bg h1, #temple-bg p {
+    position: relative; /* Ensure text is above overlays */
+    z-index: 3; /* Position text above everything */
+}
+
+
+#koi-bg h1, #koi-bg p {
+    position: relative; /* Ensure text is above overlays */
+    z-index: 3; /* Position text above everything */
+}
+.samurai{
+    width: 300px;
+    height: auto;
+}
+.clearfix{
+    height: 20px;
+}
