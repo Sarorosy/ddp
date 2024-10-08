@@ -59,3 +59,6 @@ $route['sitemap'] = 'IndexController/sitemap';
 $route['blog'] = 'IndexController/blog';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['business_services'] = 'IndexController/business_services';
+$route['services/(:any)'] = 'IndexController/service_details/$1';

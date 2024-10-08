@@ -1,6 +1,6 @@
 <style>
   .contact-section {
-    background: linear-gradient(rgba(255, 9, 9, 0.4), rgba(255, 255, 255, 0.4)), 
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), 
                 url(<?php echo base_url('assets/images/eyes.png') ?>) no-repeat center center fixed;
     background-position:center;
     background-size: cover;
@@ -215,9 +215,9 @@
       <div class="contact-img"></div>
       <div class="my-2">
         <span class="nuku text-6xl py-2 text-gray-900">Contact Us Today</span>
-        <p class="max-w-xl mx-auto" style="color:white; font-weight:bold;filter:drop-shadow(1px 1px 5px red)">
+        <p class="max-w-xl mx-auto" style="color:white; font-weight:bold;filter:drop-shadow(1px 1px 1px black)">
           Don't hold back! Choose
-          <span class=" text-black" style="">Digital Dragon Punch</span> to
+          <span class=" " style="font-family:sans-serif !important; color:red">Digital Dragon Punch</span> to
           ignite your brand's potential. Contact us today, and let's light the
           fire under your marketing strategy.
         </p>

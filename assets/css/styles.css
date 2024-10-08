@@ -86,12 +86,12 @@ h1::selection,h2::selection,h3::selection,h4::selection,h5::selection,h6::select
     }
 }
 .japanbg-col{
-    background: linear-gradient(180deg, #2d0606 0%, black 100%);
+    background: linear-gradient(180deg, #770b0b 0%, black 100%);
 }
 /* Content styling after preloader */
 #content {
     display: none;
-    background: linear-gradient(180deg, #2d0606 0%, black 100%); /* Dark red to black gradient */
+    background: linear-gradient(180deg, #770b0b 0%, black 100%); /* Dark red to black gradient */
     color: #fff;
     height: 100%;
     display: flex;
@@ -178,6 +178,9 @@ body {
     font-family: 'Shippori Antique B1', sans-serif;
     background-color: #2d0606; /* Dark red background */
     color: #fff;
+}
+.font-sans{
+    font-family: sans-serif !important;
 }
 
 /* Navbar */
@@ -300,7 +303,7 @@ nav ul li a {
 
 /* Contact Button */
 .contact-button {
-    background-color: #2d0606;  /* Bright button color */
+    background-color: #770b0b;  /* Bright button color */
     color: white; /* White text color */
     padding: 15px 30px; /* Padding for button */
     border: none; /* Remove default border */
@@ -328,3 +331,67 @@ nav ul li a {
 .clearfix{
     height: 20px;
 }
+
+#small-dot {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 1000; /* Ensure it appears above other content */
+    transform: translate(-50%, -50%); /* Center the dot */
+  }
+
+  /* Larger circle that follows the cursor */
+  #large-circle {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border: 1px solid white;
+    opacity: 0.6;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999;
+    transform: translate(-50%, -50%); /* Center the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+  }
+  /* Initially hide the text */
+.circle-text {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  /* Styles for small dot visibility */
+  .hide {
+    opacity: 0;
+  }
+  
+  /* Hovered state for the large circle */
+  .hovered {
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    height: 80px;
+    width: 80px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Show the "VIEW" text when hovered */
+  .hovered .circle-text {
+    opacity: 1;
+  }
+  
+  /* Default state for the large circle */
+  #large-circle {
+    opacity: 0.6;
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    transition: all 0.2s ease-in-out;
+  }
+  
